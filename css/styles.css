@@ -63,11 +63,11 @@ img {
   margin: -1px;
 }
 
-.current {
+a#current-nav-link {
   color: var(--OCEAN);
   position: relative;
 }
-.current::after {
+a#current-nav-link::after {
   background: var(--OCEAN);
   position: absolute;
   content: '';
@@ -448,6 +448,8 @@ img {
   background: var(--OCEAN);
   border: 1px solid transparent;
   color: var(--WHITE);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .projects-list {
@@ -585,7 +587,6 @@ img {
 }
 .customers-companys-icons:hover,
 .customers-companys-icons:focus {
-  border: 1px solid var(--OCEAN);
   fill: var(--OCEAN);
 }
 
@@ -765,13 +766,15 @@ img {
 .backdrop {
   background: var(--NAVY-BLUE-modal, rgba(46, 47, 66, 0.4));
   backdrop-filter: blur(2px);
-  transition-delay: 0s;
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--idx-modal);
   width: 100%;
   height: 100%;
+  transition-delay: 200ms;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
